@@ -25,7 +25,7 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">             
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        TI-2G_11_GALILEY SINGGANG MANGKULUHUR YASIMARU
+                        GALILEY SINGGANG MANGKULUHUR YASIMARU_TI-2G_2141723001
                     </div>
                 </div>
             </div>
