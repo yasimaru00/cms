@@ -21,13 +21,10 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">             
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        GALILEY SINGGANG MANGKULUHUR YASIMARU_TI-2G_2141723001
-                    </div>
-                </div>
+        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">         
+            <div class="ml-4  text-lg text-gray-900 sm:text-left sm:ml-0">
+                GALILEY SINGGANG MANGKULUHUR YASIMARU<br><br>
+                NIM: 2141723001, Kelas: TI-2G
             </div>
         </div>
     </body>
