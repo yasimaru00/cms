@@ -9,6 +9,12 @@ use App\Http\Controllers\SportController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CultureController;
 use App\Http\Controllers\AboutBccController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SpecialsController;
+use App\Http\Controllers\MyaccountController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DetailsController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +48,7 @@ use App\Http\Controllers\AboutBccController;
 
 // Modify Praktikum 2 Controller
 
-Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', [HomeController::class, 'index']);
 // Route::get('/about', [AboutController::class, 'index']);
 // Route::get('/articles/{id}', [ArticlesController::class, 'index']);
 
@@ -51,24 +57,38 @@ Route::get('/', [HomeController::class, 'index']);
 // Referensi dari https://www.bbc.com/ 
 
 // Route Sport memakai prefik
-Route::prefix('sport')->group(function () {
-    Route::get('/football', [SportController::class, 'Football'])->name('football');
-    Route::get('/cricket', [SportController::class, 'Cricket'])->name('cricket');
-    Route::get('/tennis', [SportController::class, 'Tennis'])->name('tennis');
-    Route::get('/cycling', [SportController::class, 'Cycling'])->name('cycling');
-});
+// Route::prefix('sport')->group(function () {
+//     Route::get('/football', [SportController::class, 'Football'])->name('football');
+//     Route::get('/cricket', [SportController::class, 'Cricket'])->name('cricket');
+//     Route::get('/tennis', [SportController::class, 'Tennis'])->name('tennis');
+//     Route::get('/cycling', [SportController::class, 'Cycling'])->name('cycling');
+// });
 
 //Route News memakai param
-Route::prefix('news')->group(function () {
-    Route::get('/world-asia-china-{id}', [NewsController::class, 'World'])->name('world');
-});
+// Route::prefix('news')->group(function () {
+//     Route::get('/world-asia-china-{id}', [NewsController::class, 'World'])->name('world');
+// });
 
 // Route Culture memakai prefik
-Route::prefix('culture')->group(function () {
-    Route::get('/designed', [CultureController::class, 'Designed'])->name('design');
-    Route::get('/style', [CultureController::class, 'Style'])->name('style');
-    Route::get('/the-collection', [CultureController::class, 'TheCollection'])->name('the-collection');
-});
+// Route::prefix('culture')->group(function () {
+//     Route::get('/designed', [CultureController::class, 'Designed'])->name('design');
+//     Route::get('/style', [CultureController::class, 'Style'])->name('style');
+//     Route::get('/the-collection', [CultureController::class, 'TheCollection'])->name('the-collection');
+// });
 
 // Route About BBC memakai route biasa
-Route::get('/aboutthebbc', [AboutBccController::class, 'AboutBcc'])->name('aboutthebbc');
+// Route::get('/aboutthebbc', [AboutBccController::class, 'AboutBcc'])->name('aboutthebbc');
+
+//Praktikum 3 
+
+// Auth::routes();
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/category', [CategoryController::class, 'index'])->name('category');
+Route::get('/specials', [SpecialsController::class, 'index'])->name('specials');
+Route::get('/myaccount', [MyaccountController::class, 'index'])->name('myaccount');
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::get('/details', [DetailsController::class, 'index'])->name('details');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
