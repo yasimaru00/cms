@@ -6,7 +6,7 @@ use App\Models\Flower;
 use App\Models\List_Bunga;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class KategoriController extends Controller
 {
     public function index()
     {
@@ -19,7 +19,6 @@ class RegisterController extends Controller
         $data['bull6'] = Flower::wherein('kategori', ['icon6', 'title'])->first();
         $data['new'] = Flower::where('kategori', 'new')->first();
         $data['promo'] = Flower::where('kategori', 'promo')->first();
-        $data['special'] = Flower::where('kategori', 'special')->first();
         $data['thumb'] = Flower::wherein('kategori', ['thumb', 'new_prod_box', 'label', 'icon'])->get();
         $data['thumb2'] = Flower::wherein('nm_flower', ['thumb2', 'new_prod_box', 'label'])->get();
         $data['thumb3'] = Flower::wherein('nm_flower', ['thumb1', 'new_prod_box', 'img_flower'])->get();
@@ -29,6 +28,6 @@ class RegisterController extends Controller
         $data['lis1'] = List_Bunga::where('kat_list', 'l1',)->get();
         $data['lis2'] = List_Bunga::where('kat_list', 'l2',)->get();
 
-        return view('register.index', $data);
+        return view('kategori.index', $data);
     }
 }

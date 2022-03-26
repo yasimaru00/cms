@@ -6,7 +6,7 @@ use App\Models\Flower;
 use App\Models\List_Bunga;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class SpesialController extends Controller
 {
     public function index()
     {
@@ -29,6 +29,6 @@ class RegisterController extends Controller
         $data['lis1'] = List_Bunga::where('kat_list', 'l1',)->get();
         $data['lis2'] = List_Bunga::where('kat_list', 'l2',)->get();
 
-        return view('register.index', $data);
+        return view('spesial.index', $data);
     }
 }

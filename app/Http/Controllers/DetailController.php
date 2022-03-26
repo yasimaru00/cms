@@ -6,10 +6,10 @@ use App\Models\Flower;
 use App\Models\List_Bunga;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class DetailController extends Controller
 {
     public function index()
-    {
+    {   
         $data['prod'] = Flower::wherein('kategori', ['prod_img', 'prod_title'])->get();
         $data['bull1'] = Flower::wherein('kategori', ['icon1', 'title'])->first();
         $data['bull2'] = Flower::wherein('kategori', ['icon2', 'title'])->first();
@@ -28,7 +28,6 @@ class RegisterController extends Controller
         $data['about'] = Flower::where('kategori', ['about', 'keterangan'])->first();
         $data['lis1'] = List_Bunga::where('kat_list', 'l1',)->get();
         $data['lis2'] = List_Bunga::where('kat_list', 'l2',)->get();
-
-        return view('register.index', $data);
+        return view('detail.index',$data);
     }
 }
