@@ -28,6 +28,11 @@ class DetailController extends Controller
         $data['about'] = Flower::where('kategori', ['about', 'keterangan'])->first();
         $data['lis1'] = List_Bunga::where('kat_list', 'l1',)->get();
         $data['lis2'] = List_Bunga::where('kat_list', 'l2',)->get();
+        $data['lis'] = List_Bunga::where('kat_list', 'lili',)->get();
+        $data['color'] = Flower::where('kategori', 'color',)->get();
+        $data['big'] = Flower::where('kategori', 'big_pic',)->first();
+        $data['zom'] = Flower::where('kategori', 'zoom',)->first();
+        $data['order'] = Flower::where('kategori', 'order_now',)->first();
         return view('detail.index',$data);
     }
 }

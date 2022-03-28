@@ -25,7 +25,9 @@ class AboutController extends Controller
         $data['bull6'] = Flower::wherein('kategori', ['icon6', 'title'])->first();
         $data['new'] = Flower::where('kategori', 'new')->first();
         $data['promo'] = Flower::where('kategori', 'promo')->first();
-        $data['thumb'] = Flower::wherein('kategori', ['thumb', 'new_prod_box', 'new'])->get();
+        $data['thumb'] = Flower::wherein('kategori', ['thumb', 'new_prod_box', 'label', 'icon'])->get();
+        $data['thumb2'] = Flower::wherein('nm_flower', ['thumb2', 'new_prod_box', 'label'])->get();
+        $data['thumb3'] = Flower::wherein('nm_flower', ['thumb1', 'new_prod_box', 'img_flower'])->get();
         $data['bhs'] = Flower::where('kategori', 'bendera')->orderBy('bahasa', 'desc')->get();
         $data['cart'] = Flower::wherein('kategori', ['cart', 'title'])->first();
         $data['about'] = Flower::where('kategori', ['about', 'keterangan'])->first();
