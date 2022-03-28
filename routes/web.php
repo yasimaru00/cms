@@ -9,11 +9,11 @@ use App\Http\Controllers\SportController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CultureController;
 use App\Http\Controllers\AboutBccController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\SpecialsController;
-use App\Http\Controllers\MyaccountController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\SpesialController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DetailsController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ContactController;
 
 /*
@@ -79,16 +79,26 @@ use App\Http\Controllers\ContactController;
 // Route About BBC memakai route biasa
 // Route::get('/aboutthebbc', [AboutBccController::class, 'AboutBcc'])->name('aboutthebbc');
 
-//Praktikum 3 
+//Praktikum 3 View
 
 // Auth::routes();
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/category', [CategoryController::class, 'index'])->name('category');
-Route::get('/specials', [SpecialsController::class, 'index'])->name('specials');
-Route::get('/myaccount', [MyaccountController::class, 'index'])->name('myaccount');
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::get('/details', [DetailsController::class, 'index'])->name('details');
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+// Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/about', [AboutController::class, 'index'])->name('about');
+// Route::get('/category', [CategoryController::class, 'index'])->name('category');
+// Route::get('/specials', [SpecialsController::class, 'index'])->name('specials');
+// Route::get('/myaccount', [MyaccountController::class, 'index'])->name('myaccount');
+// Route::get('/register', [RegisterController::class, 'index'])->name('register');
+// Route::get('/details', [DetailsController::class, 'index'])->name('details');
+// Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Praktikum 4 Model;
+Route::resource('/', HomeController::class);
+Route::resource('/about', AboutController::class);
+Route::resource('/kategori', KategoriController::class);
+Route::resource('/spesial', SpesialController::class);
+Route::resource('/login', LoginController::class);
+Route::resource('/register', RegisterController::class);
+Route::resource('/detail', DetailController::class);
+Route::resource('/contact', ContactController::class);
