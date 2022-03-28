@@ -212,5 +212,60 @@ class FlowerSeeder extends Seeder
             'label' => '',
             'color' => '',
         ]);
+        Flower::create([
+            'nm_flower' => 'big_pic',
+            'img_flower' => '',
+            'title' => '',
+            'keterangan' => '',
+            'kategori' => 'big_pic',
+            'icon' => url('/assets/images/big_pic.jpg'),
+            'label' => '',
+            'color' => '',
+        ]);
+        Flower::create([
+            'nm_flower' => 'zoom',
+            'img_flower' => '',
+            'title' => '',
+            'keterangan' => '',
+            'kategori' => 'zoom',   
+            // 'icon' => url('/assets/images/zoom.gif'),
+            'label' => url('/assets/images/zoom.gif'),
+            'color' => '',
+        ]);
+        Flower::create([
+            'nm_flower' => 'order_now',
+            'img_flower' => '',
+            'title' => '',
+            'keterangan' => '',
+            'kategori' => 'order_now',   
+            'icon' => url('/assets/images/order_now.gif'),
+            // 'label' => url('/assets/images/zoom.gif'),
+            'color' => '',
+        ]);
+        Flower::create([
+            'nm_flower' => 'color11',
+            'img_flower' => '',
+            'title' => '',
+            'keterangan' => '',
+            'kategori' => 'color',   
+            'color' => url('/assets/images/color1.gif'),
+        ]);
+        Flower::create([
+            'nm_flower' => 'color12',
+            'img_flower' => '',
+            'title' => '',
+            'keterangan' => '',
+            'kategori' => 'color',   
+            'color' => url('/assets/images/color2.gif'),
+        ]);
+        Flower::create([
+            'nm_flower' => 'color13',
+            'img_flower' => '',
+            'title' => '',
+            'keterangan' => '',
+            'kategori' => 'color',   
+            'color' => url('/assets/images/color3.gif'),
+        ]);
+        
     }
 }

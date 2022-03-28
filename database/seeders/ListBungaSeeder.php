@@ -97,5 +97,21 @@ class ListBungaSeeder extends Seeder
             'list2' => 'accesories',
             'kat_list' => 'l2',
         ]);
+        List_Bunga::create([
+            'list1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'kat_list' => 'lili',
+        ]);
+        List_Bunga::create([
+            'list1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'kat_list' => 'lili',
+        ]);
+        List_Bunga::create([
+            'list1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'kat_list' => 'lili',
+        ]);
+        List_Bunga::create([
+            'list1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'kat_list' => 'lili',
+        ]);
     }
 }
