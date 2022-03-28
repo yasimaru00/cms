@@ -56,7 +56,7 @@ function Yetii() {
         if(this.defaults.active > this.tabs.length) this.defaults.active = 1;
     
         var self = this;
-        this.defaults.timeout = setTimeout(function(){self.rotate(interval);}, interval*1000);
+        this.defaults.timeout = setTimeout(function(){self.rotate(interval);}, interval*500);
     
     };
 	
