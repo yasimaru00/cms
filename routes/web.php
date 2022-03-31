@@ -15,6 +15,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +95,8 @@ use App\Http\Controllers\ContactController;
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Praktikum 4 Model;
+
+Auth::routes();
 Route::resource('/', HomeController::class);
 Route::resource('/about', AboutController::class);
 Route::resource('/kategori', KategoriController::class);

@@ -8,30 +8,70 @@
       <p class="details">{{$about->keterangan}}</p>
       <div class="contact_form">
         <div class="form_subtitle">create new account</div>
-        <form name="register" href="#">
+        <form name="register" href="" method="post" action="{{route('register.store')}}">
+          @csrf
           <div class="form_row">
-            <label class="contact"><strong>Username:</strong></label>
-            <input type="text" class="contact_input" />
+            <label for="name" class="contact"><strong>Name:</strong></label>
+            <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+            @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
           </div>
           <div class="form_row">
-            <label class="contact"><strong>Password:</strong></label>
-            <input type="text" class="contact_input" />
+            <label for="username" class="contact"><strong>Username:</strong></label>
+            <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+            @error('username')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
           </div>
           <div class="form_row">
-            <label class="contact"><strong>Email:</strong></label>
-            <input type="text" class="contact_input" />
+            <label for="password" class="contact"><strong>Password:</strong></label>
+            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="password">
+            @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
           </div>
           <div class="form_row">
-            <label class="contact"><strong>Phone:</strong></label>
-            <input type="text" class="contact_input" />
+            <label for="email" class="contact"><strong>Email:</strong></label>
+             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+              @error('email')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
           </div>
           <div class="form_row">
-            <label class="contact"><strong>Company:</strong></label>
-            <input type="text" class="contact_input" />
+            <label  for="phone_number" class="contact"><strong>Phone:</strong></label>
+            <input id="phone_number" type="phone_number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number">
+              @error('phone_number')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
           </div>
           <div class="form_row">
-            <label class="contact"><strong>Adrres:</strong></label>
-            <input type="text" class="contact_input" />
+            <label for="company" class="contact"><strong>Company:</strong></label>
+             <input id="company" type="company" class="form-control @error('company') is-invalid @enderror" name="company" value="{{ old('company') }}" required autocomplete="company">
+              @error('company')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+          </div>
+          <div class="form_row">
+            <label for="address" class="contact"><strong>Adrres:</strong></label>
+             <input id="address" type="address" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address">
+              @error('address')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
           </div>
           <div class="form_row">
             <div class="terms">

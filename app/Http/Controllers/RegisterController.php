@@ -5,9 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Flower;
 use App\Models\List_Bunga;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+// use App\Providers\RouteServiceProvider;
+use App\Models\User;
+// use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+// use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+
+    // public function __construct()
+    // {
+    //     $this->middleware('guest');
+    // }
     public function index()
     {
         $data['prod'] = Flower::wherein('kategori', ['prod_img', 'prod_title'])->get();
@@ -28,7 +39,31 @@ class RegisterController extends Controller
         $data['about'] = Flower::where('kategori', ['about', 'keterangan'])->first();
         $data['lis1'] = List_Bunga::where('kat_list', 'l1',)->get();
         $data['lis2'] = List_Bunga::where('kat_list', 'l2',)->get();
+        $data['user'] = User::all();
 
         return view('register.index', $data);
     }
+
+   
+    protected function store(Request $request)
+    {
+        $register = new User;
+        $register->name = $request->name;
+        $register->username = $request->username;
+        $register->email = $request->email;
+        $register->phone_number = $request->phone_number;
+        $register->company = $request->company;
+        $register->address = $request->address;
+        $register->password = $request->password;
+        $register->save();
+
+        $result = [
+            'succes' => true,
+            'message' =>  'Register' . $request->username . 'berhasil ditambahkan'
+        ];
+
+        return json_encode($result);
+    }
+
+    
 }

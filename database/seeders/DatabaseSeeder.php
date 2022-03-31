@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call([FlowerSeeder::class]);
         $this->call([ListBungaSeeder::class]);
+        $this->call([UserSeeder::class]);
     }
 }

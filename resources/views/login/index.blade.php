@@ -8,14 +8,27 @@
       <p class="details"> {{$about->keterangan}}</p>
       <div class="contact_form">
         <div class="form_subtitle">login into your account</div>
-        <form name="register" href="#">
+        <form name="login" href="" method="post" action="{{route('login.store')}}">
+        @csrf
           <div class="form_row">
-            <label class="contact"><strong>Username:</strong></label>
-            <input type="text" class="contact_input" />
+            <label for="username" class="contact"><strong>Username:</strong></label>
+            <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+
+            @error('username')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
           </div>
           <div class="form_row">
-            <label class="contact"><strong>Password:</strong></label>
-            <input type="text" class="contact_input" />
+            <label for="password" class="contact"><strong>Password:</strong></label>
+            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+            @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
           </div>
           <div class="form_row">
             <div class="terms">
@@ -24,7 +37,7 @@
             </div>
           </div>
           <div class="form_row">
-            <input type="submit" class="register" value="login" />
+            <input type="submit" class="login" value="login" />
           </div>
         </form>
       </div>
