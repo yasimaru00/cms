@@ -105,3 +105,4 @@ Route::resource('/login', LoginController::class);
 Route::resource('/register', RegisterController::class);
 Route::resource('/detail', DetailController::class);
 Route::resource('/contact', ContactController::class);
+Route::resource('/articles', ArticlesController::class);
