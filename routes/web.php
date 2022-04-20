@@ -106,3 +106,4 @@ Route::resource('/register', RegisterController::class);
 Route::resource('/detail', DetailController::class);
 Route::resource('/contact', ContactController::class);
 Route::resource('/articles', ArticlesController::class);
+Route::get('/article/cetak_pdf',[ArticlesController::class,'cetak_pdf'])->name('cetak_pdf');
